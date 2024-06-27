@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Pool Matches Record</title>
+</head>
+<body>
+    <div class="custom-header">Record Your Pool Matches</div>
+    <div class="custom-input">
+        Player 1: <input type="text" id="player1" value="Player 1 Name">
+    </div>
+    <div class="custom-input">
+        Player 2: <input type="text" id="player2" value="Player 2 Name">
+    </div>
+    <div class="custom-input">
+        Winner:
+        <select id="winner">
+            <option value="Player 1">Player 1</option>
+            <option value="Player 2">Player 2</option>
+        </select>
+    </div>
+    <button onclick="addMatch()">Add Match</button>
+    <script src="script.js"></script>
+</body>
+</html>
