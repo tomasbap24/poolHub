@@ -36,7 +36,7 @@ def delete_match(match_id):
     conn.close()
 
 # Title of the app
-st.title('Pool Matches Record')
+st.title('TORO VS COCO')
 
 # Input form for new match
 player1 = st.text_input('Player 1')
