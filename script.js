@@ -1,11 +1,22 @@
-function addMatch() {
-  var player1 = document.getElementById('player1').value;
-  var player2 = document.getElementById('player2').value;
-  var winner = document.getElementById('winner').value;
+function submitForm() {
+  const player1 = document.getElementById('player1').value;
+  const player2 = document.getElementById('player2').value;
+  const winner = document.getElementById('winner').value;
 
-  // Send data to Streamlit
-  var streamlitEvents = window.streamlitEvents || (window.streamlitEvents = []);
-  streamlitEvents.push(function() {
-      window.streamlitEvents.broadcast({player1: player1, player2: player2, winner: winner});
+  fetch('/submit', {
+      method: 'POST',
+      headers: {
+          'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ player1, player2, winner }),
+  })
+  .then(response => response.json())
+  .then(data => {
+      if (data.success) {
+          alert('Match added successfully!');
+      }
+  })
+  .catch((error) => {
+      console.error('Error:', error);
   });
 }
